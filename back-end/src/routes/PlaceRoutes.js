@@ -6,6 +6,6 @@ const placesController = require('../controller/PlacesController.js');
 router.get('/:categoryName', placesController.searchPlacesByCategoryName);
 
 // Ruta para buscar lugares por nombre de categoría
-router.get('/:placeId', placesController.findPlaceByPlaceId);
+router.get('/p/:placeId', placesController.findPlaceByPlaceId);
 
 module.exports = router;

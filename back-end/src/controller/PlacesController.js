@@ -28,7 +28,6 @@ exports.searchPlacesByCategoryName = async (req, res) => {
 
         // Devolver los lugares encontrados
         const places = response.data.results;
-        console.log(places);
         res.json({ places });
     } catch (error) {
         res.status(500).json({ message: 'Error al buscar lugares por categoría', error: error.message });

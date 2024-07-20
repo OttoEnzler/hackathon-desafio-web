@@ -20,6 +20,8 @@ const categoryRoutes = require('./routes/CategoryRoutes');
 app.use('/api/categories', categoryRoutes);
 const placesRoutes = require('./routes/PlaceRoutes');
 app.use('/api/places', placesRoutes);
+const reviewRoutes = require('./routes/ReviewRoutes');
+app.use('/api/places', reviewRoutes);
 
 // Error handler middleware
 app.use((err, req, res, next) => {
