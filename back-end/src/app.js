@@ -1,27 +1,31 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+require('dotenv').config();
+
 const app = express();
-const mapsApi = require('./api/MapsApi');
-const userApi = require('./api/UserApi');
-const securityApi = require('./api/SecurityApi')
-const cors = require('cors')
-require('dotenv').config()
+const port = process.env.PORT || 3001;
 
-//middleware
-app.use(express.json());
+// Middleware
 app.use(cors());
+app.use(express.json());
 
-//database connection
-mongoose.connect(process.env.MONGO_DB_URL)
-    .then(() => {
-        console.log('Connected to database!')
-        app.listen(3001, () => {
-            console.log('Server is running on port 3001');
-        });
-    })
-    .catch(() => console.log('Connection failed!'));
+// Database connection
+mongoose.connect(process.env.MONGO_DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Error connecting to MongoDB:', err));
 
-//routes
-app.use('/api/maps/', mapsApi);
-app.use('/api/user/', userApi);
-app.use('/api/security/', securityApi);
+// Routes
+const categoryRoutes = require('./routes/CategoryRoutes');
+app.use('/api/categories', categoryRoutes);
+
+// Error handler middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
+// Start server
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
