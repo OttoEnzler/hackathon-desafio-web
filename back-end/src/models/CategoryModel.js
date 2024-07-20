@@ -2,10 +2,12 @@ const mongoose = require('mongoose');
 
 const CategorySchema = mongoose.Schema({
     name: {
-        type: String
+        type: String,
+        require: true
     },
     image: {
-        type: String
+        type: String,
+        require: true
     }
 }, { timestamps: true });
 
