@@ -8,7 +8,12 @@ const CategorySchema = mongoose.Schema({
     image: {
         type: String,
         require: true
+    },
+    textQuery: {
+        type: String,
+        require: true
     }
+
 }, { timestamps: true });
 
 const Category = mongoose.model('Category', CategorySchema);

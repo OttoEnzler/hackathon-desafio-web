@@ -18,6 +18,8 @@ mongoose.connect(process.env.MONGO_DB_URL, { useNewUrlParser: true, useUnifiedTo
 // Routes
 const categoryRoutes = require('./routes/CategoryRoutes');
 app.use('/api/categories', categoryRoutes);
+const placesRoutes = require('./routes/PlaceRoutes');
+app.use('/api/places', placesRoutes);
 
 // Error handler middleware
 app.use((err, req, res, next) => {
