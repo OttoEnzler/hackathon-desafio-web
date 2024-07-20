@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CategoryCard from './CategoryCard.jsx';
-import Title from './utils/Title.jsx';
+import Title from './Utils/Title.jsx';
 
 const CategoryList = () => {
     const [categories, setCategories] = useState([]);
@@ -19,7 +19,7 @@ const CategoryList = () => {
         };
 
         fetchCategories();
-    }, []); // Ejecuta solo una vez al montar el componente
+    }, []); 
 
     return (
         <div className="">

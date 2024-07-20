@@ -1,5 +1,5 @@
 
-const Category =(props) => {
+const Bienvenida =(props) => {
     
 
     return(
@@ -9,4 +9,4 @@ const Category =(props) => {
         </>
     );
 }
-export default Category;
+export default Bienvenida;
