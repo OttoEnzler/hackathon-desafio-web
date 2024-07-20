@@ -16,12 +16,8 @@ const ReviewSchema = new mongoose.Schema({
         required: true
     },
     placeId: {
-        type: String, // Cambiado a String para almacenar el Place ID de Google Maps
+        type: String, // Almacena el Place ID de Google Maps
         required: true
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now
     }
 });
 
