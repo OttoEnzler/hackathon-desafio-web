@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/solid'; // Asegúrate de tener Heroicons instalados
+import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/solid'; 
 
 const Valoraciones = ({ placeId }) => {
     const [formData, setFormData] = useState({
@@ -47,7 +47,7 @@ const Valoraciones = ({ placeId }) => {
     };
 
     return (
-        <div className="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-md mt-8">
+        <div className="max-w-xl mx-auto bg-gray-100 p-6 rounded-lg shadow-md mt-8">
             <div
                 onClick={() => setIsCollapsed(!isCollapsed)}
                 className="flex justify-between items-center cursor-pointer"
