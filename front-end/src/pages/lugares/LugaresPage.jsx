@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import Title from '../../components/Utils/Title';
+import Title from '../../components/utils/Title';
 
 function LugaresPage() {
     const apiKey= "AIzaSyAt3oTHy0DfMpfp4aED_V5_Lj9SQKerUbE";

@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CategoryCard from './CategoryCard.jsx';
-import Title from './Utils/Title.jsx';
+import Title from './utils/Title.jsx';
+
 
 const CategoryList = () => {
     const [categories, setCategories] = useState([]);
